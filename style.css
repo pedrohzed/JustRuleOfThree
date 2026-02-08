@@ -26,34 +26,27 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-/* Remove a cor de fundo do rodapé e centraliza tudo */
-.rodape {
+
+/* Estilos para o rodapé */
+.main-footer {
     padding: 30px 0;
     text-align: center;
-    font-family: sans-serif;
-    margin-top: 80px; /* Aumentei a margem para dar mais espaço */
-    color: #fff; /* Garante que o texto seja branco e visível no fundo azul */
-}
-
-/* Container interno (não é estritamente necessário agora, mas mantém a estrutura) */
-.rodape-conteudo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    font-family: 'Lexend', sans-serif;
+    margin-top: 80px;
+    color: #fff;
 }
 
 /* Estilos para o link do Instagram */
-.redes-sociais a {
-    color: #fff; /* Cor do link branca para combinar com o texto */
-    text-decoration: underline; /* Adiciona sublinhado para indicar que é um link */
+.main-footer a {
+    color: #fff;
+    text-decoration: underline;
     font-weight: bold;
     transition: 0.3s;
 }
 
 /* Efeito ao passar o mouse sobre o link */
-.redes-sociais a:hover {
-    color: #ddd; /* Cor suave ao passar o mouse */
+.main-footer a:hover {
+    color: #ddd;
 }
 
 h1 { margin-bottom: 30px; }

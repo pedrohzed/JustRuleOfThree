@@ -1,26 +1,33 @@
-// Espera o botão ser clicado
-document.getElementById('btnCalcular').addEventListener('click', function() {
-    
-    // Pega os valores dentro da função para estarem atualizados
-    const a = parseFloat(document.getElementById('valorA').value);
-    const b = parseFloat(document.getElementById('valorB').value);
-    const c = parseFloat(document.getElementById('valorC').value);
-    const resContainer = document.getElementById('resultadoX');
+// Get the button and input elements
+const btnCalcular = document.getElementById('btnCalcular');
+const valorA = document.getElementById('valorA');
+const valorB = document.getElementById('valorB');
+const valorC = document.getElementById('valorC');
+const resultadoX = document.getElementById('resultadoX');
 
-    // Validação
-    if (isNaN(a) || isNaN(b) || isNaN(c)) {
-        alert("Por favor, preencha os campos A, B e C");
+// Add click event listener to the button
+btnCalcular.addEventListener('click', function() {
+    const a = parseFloat(valorA.value);
+    const b = parseFloat(valorB.value);
+    const c = parseFloat(valorC.value);
+    
+    // Validate inputs
+    if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0 || b === 0) {
+        resultadoX.textContent = 'Erro';
         return;
     }
+    
+    // Calculate using rule of three: A/B = C/X
+    // Therefore: X = (B * C) / A
+    const x = (b * c) / a;
+    
+    // Display result with 2 decimal places
+    resultadoX.textContent = x.toFixed(2);
+});
 
-    // Regra de três: X = (B * C) / A
-    if (a === 0) {
-        resContainer.innerText = "Erro";
-        resContainer.style.color = "red";
-    } else {
-        const x = (b * c) / a;
-        // Mostra o resultado formatado
-        resContainer.innerText = x.toLocaleString('pt-BR', { maximumFractionDigits: 2 });
-        resContainer.style.color = "#004e92";
+// Optional: Allow calculation on Enter key press
+valorC.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        btnCalcular.click();
     }
 });
