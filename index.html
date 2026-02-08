@@ -1,39 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustRuleOfThree</title>
+    <title>Smart RuleOfThree</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <h1 id="site-title">Smart Rule of Three</h1>
+    <div class="glass-container">
+        <h1 id="main-title">How many quantities?</h1>
+        <p id="sub-title">Enter the number of variables (e.x., 2 for simple, 3+ for compound)</p>
+        
+        <div id="dynamic-content">
+            <input type="number" id="qty-input" placeholder="Value (min. 2)" min="2">
+        </div>
 
-    <h1>Just a Rule Of Three</h1>
-
-    <div class="container-regra">
-        <div class="caixa">
-            <input type="number" id="valorA" placeholder="A">
-        </div>
-        <div class="caixa">
-            <input type="number" id="valorB" placeholder="B">
-        </div>
-        <div class="caixa">
-            <input type="number" id="valorC" placeholder="C">
-        </div>
-        <div class="caixa destaque">
-            <div id="resultadoX">X</div>
+        <div class="controls">
+            <button id="next-btn">Continue</button>
         </div>
     </div>
 
-    <button id="btnCalcular">Calcular</button>
-
     <script src="script.js"></script>
-
-    <footer class="main-footer">
-        <p>&copy; 2026 Pedro Henrique. All rights reserved.</p>
-        <p>Follow me: <a href="https://www.instagram.com/pedrohzed/" target="_blank">@pedrohzed</a></p>
-    </footer>
-
 </body>
 </html>

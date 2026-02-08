@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap');
 
 body {
@@ -9,13 +10,13 @@ body {
     font-weight: 700;
     color: white;
     
-    /* Centralização */
+    Centralização
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    /* Fundo Animado */
+    Fundo Animado
     background: linear-gradient(-45deg, #000428, #004e92, #00d2ff, #3a7bd5);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
@@ -27,7 +28,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Estilos para o rodapé */
+Estilos para o rodapé
 .main-footer {
     padding: 30px 0;
     text-align: center;
@@ -36,7 +37,7 @@ body {
     color: #fff;
 }
 
-/* Estilos para o link do Instagram */
+Estilos para o link do Instagram
 .main-footer a {
     color: #fff;
     text-decoration: underline;
@@ -44,7 +45,7 @@ body {
     transition: 0.3s;
 }
 
-/* Efeito ao passar o mouse sobre o link */
+Efeito ao passar o mouse sobre o link
 .main-footer a:hover {
     color: #ddd;
 }
@@ -98,8 +99,161 @@ button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
+
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transition: transform 0.2s;
 }
 
-button:active { transform: scale(0.95); }
+button:active { transform: scale(0.95); }*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap');
+
+/* 1. Configuração Base e Fundo */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Lexend', sans-serif;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    background: radial-gradient(circle at top left, #004e92, #000428);
+    overflow-x: hidden;
+    color: white;
+}
+
+/* 2. Título do Topo */
+#site-title {
+    position: fixed;
+    top: 24px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+/* 3. Container Principal (Glassmorphism) */
+.glass-container {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 50px 40px;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 550px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Garante que o conteúdo interno esteja no meio */
+}
+
+h1#main-title { 
+    font-size: 2rem; 
+    margin-bottom: 8px; 
+    background: linear-gradient(to right, #fff, #00d2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p#sub-title { 
+    font-size: 0.95rem; 
+    color: rgba(255, 255, 255, 0.6); 
+    margin-bottom: 35px; 
+}
+
+/* 4. Grid de Inputs Dinâmicos */
+.horizontal-grid {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 5px 25px;
+    justify-content: center; /* Centraliza os quadrados de cálculo */
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 5. Caixas de Input */
+.box {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 12px;
+    transition: transform 0.2s;
+    min-width: 100px;
+}
+
+.box:focus-within { transform: scale(1.02); }
+
+label { 
+    color: #888; 
+    font-size: 0.65rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+input {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80px;
+    font-family: 'Lexend';
+    text-align: center;
+    font-size: 1.1rem;
+    color: #222;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input:focus { border-color: #004e92; box-shadow: 0 0 0 3px rgba(0, 78, 146, 0.1); }
+
+/* 6. Resultado e Botões */
+.result-box {
+    background: #00d2ff;
+    color: #000428;
+    font-weight: 700;
+    font-size: 1.2rem;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+}
+
+button {
+    margin-top: 20px;
+    padding: 16px 45px;
+    font-family: 'Lexend';
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 16px;
+    border: none;
+    background: #fff;
+    color: #004e92;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+button:hover {
+    background: #00d2ff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 210, 255, 0.4);
+}
